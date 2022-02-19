@@ -2,3 +2,12 @@
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.md-layout-item-shadow {
+  flex: 1 1 300px;
+  cursor: pointer;
+}
+
+.md-layout-item-shadow:hover {
+  border: rgba(0, 0, 0, .2) 1px solid;
+}

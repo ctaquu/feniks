@@ -2,14 +2,21 @@ import Vue from "vue";
 import Router from "vue-router";
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
+import Glavna from "./views/Glavna.vue";
+import Ucenici from "./views/categories/Ucenici.vue";
+import Pomocnici from "./views/categories/Pomocnici.vue";
+import Majstori from "./views/categories/Majstori.vue";
 import Login from "./views/Login.vue";
-import Profile from "./views/Profile.vue";
+import Logout from "./views/Logout.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
+import Navbar from "./layout/Navbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
+import Footer from "./layout/Footer.vue";
 
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
@@ -30,20 +37,51 @@ export default new Router({
       }
     },
     {
-      path: "/login",
-      name: "login",
-      components: { default: Login, header: MainNavbar, footer: MainFooter },
+      path: "/glavna",
+      name: "glavna",
+      components: { default: Glavna, header: Navbar, footer: Footer },
       props: {
         header: { colorOnScroll: 400 }
       }
     },
     {
-      path: "/profile",
-      name: "profile",
-      components: { default: Profile, header: MainNavbar, footer: MainFooter },
+      path: "/login",
+      name: "login",
+      components: { default: Login, header: Navbar, footer: Footer },
       props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/logout",
+      name: "logout",
+      components: { default: Logout, header: Navbar, footer: Footer },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/kategorije/ucenici",
+      name: "ucenici",
+      components: { default: Ucenici, header: Navbar, footer: Footer },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/kategorije/pomocnici",
+      name: "pomocnici",
+      components: { default: Pomocnici, header: Navbar, footer: Footer },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/kategorije/majstori",
+      name: "majstori",
+      components: { default: Majstori, header: Navbar, footer: Footer },
+      props: {
+        header: { colorOnScroll: 400 }
       }
     }
   ],
