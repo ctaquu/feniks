@@ -8,7 +8,10 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <!--        <h3 class="md-title">{{ pdf.name }}</h3>-->
+        <h3 class="md-title" @click="nazad">
+          <i class="material-icons">arrow_back_ios</i>
+          Повратак на списак
+        </h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -26,12 +29,7 @@
             <mobile-menu nav-mobile-section-start="false">
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
-            <md-list>
-              <md-list-item @click="nazad">
-                <i class="material-icons">arrow_back_ios</i>
-                <p>Повратак на списак</p>
-              </md-list-item>
-            </md-list>
+            <md-list> </md-list>
           </div>
         </div>
       </div>
