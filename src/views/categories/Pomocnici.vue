@@ -11,7 +11,6 @@
               Неке поруке мало старијим...
             </h4>
             <br />
-
           </div>
         </div>
       </div>
@@ -19,186 +18,8 @@
     <div class="main main-raised">
       <div class="section">
         <div class="container">
-
           <div class="features text-center">
-            <div class="md-layout">
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>picture_as_pdf</md-icon>
-                  </div>
-                  <h4 class="info-title">Име једног од фајлова у низу...</h4>
-                  <p>
-                    Евентуално можемо да додамо и опис овде, али то мало компликује ствари... :)
-                  </p>
-                </div>
-              </div>
-            </div>
+            <pdf-list category="pomocnici" />
           </div>
         </div>
       </div>
@@ -207,7 +28,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import PdfList from "../components/PdfList";
+
 export default {
+  components: { PdfList },
   bodyClass: "landing-page",
   props: {
     header: {
@@ -228,19 +53,20 @@ export default {
     }
   },
   data() {
-    return {
-      name: null,
-      email: null,
-      message: null
-    };
+    return {};
   },
   computed: {
     headerStyle() {
       return {
         backgroundImage: `url(${this.header})`
       };
-    }
-  }
+    },
+    ...mapGetters({
+      user: "user"
+    })
+  },
+  created() {},
+  methods: {}
 };
 </script>
 
@@ -249,6 +75,7 @@ export default {
   display: flex;
   justify-content: center !important;
 }
+
 .contact-form {
   margin-top: 30px;
 }

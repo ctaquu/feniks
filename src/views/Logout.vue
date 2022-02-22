@@ -20,6 +20,8 @@
 
 <script>
 import { LoginCard } from "@/components";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import router from "../router";
 
 export default {
   components: {
@@ -35,7 +37,7 @@ export default {
   },
   props: {
     header: {
-      type: String,
+      type: String
       // default: require("@/assets/img/profile_city.jpg")
     }
   },
@@ -45,6 +47,12 @@ export default {
         backgroundImage: `url(${this.header})`
       };
     }
+  },
+  created: () => {
+    const auth = getAuth();
+    auth.signOut().then(() => {
+      router.push("/login");
+    });
   }
 };
 </script>

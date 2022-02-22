@@ -4,14 +4,13 @@
       <div class="container">
         <div class="md-layout">
           <div
-              class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
+            class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
           >
             <h1 class="title">Наслов за Главну Страну</h1>
             <h4>
-              Порука добродошлице. Порука добродошлице. Порука добродошлице. Порука добродошлице. Порука добродошлице. Порука добродошлице. Порука добродошлице.Порука добродошлице. Порука добродошлице.
+              Порука добродошлице.
             </h4>
             <br />
-
           </div>
         </div>
       </div>
@@ -21,7 +20,7 @@
         <div class="container">
           <div class="md-layout">
             <div
-                class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
+              class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
             >
               <h2 class="title text-center">Главне Категорије</h2>
               <h5 class="description">
@@ -31,37 +30,18 @@
           </div>
           <div class="features text-center">
             <div class="md-layout">
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
+              <div
+                v-for="category in categories"
+                :key="category.id"
+                class="md-layout-item md-medium-size-33 md-small-size-100"
+              >
                 <div class="info">
                   <md-button
-                      class="md-success md-lg"
-                      @click="$router.push('/kategorije/ucenici')"
-                  >Ученици</md-button>
-                  <p>
-                    Почетни текстови у трагању за светлошћу...
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <md-button
-                      class="md-info md-lg"
-                      @click="$router.push('/kategorije/pomocnici')"
-                  >Помоћници</md-button>
-                  <p>
-                    Нешто мало више...
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-medium-size-33 md-small-size-100">
-                <div class="info">
-                  <md-button
-                      class="md-danger md-lg"
-                      @click="$router.push('/kategorije/majstori')"
-                  >Мајстори</md-button>
-                  <p>
-                    Нешто на високом нивоу...
-                  </p>
+                    class="md-success md-lg"
+                    @click="handleOpenCategory(category)"
+                    >{{ category.title }}
+                  </md-button>
+                  <p>{{ category.subtitle }}</p>
                 </div>
               </div>
             </div>
@@ -73,6 +53,9 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import router from "../router";
+
 export default {
   bodyClass: "landing-page",
   props: {
@@ -97,15 +80,41 @@ export default {
     return {
       name: null,
       email: null,
-      message: null
+      message: null,
+      categories: [
+        {
+          id: "ucenici",
+          title: "Ученици",
+          subtitle: "Почетни текстови у трагању за светлошћу..."
+        },
+        {
+          id: "pomocnici",
+          title: "Помоћници",
+          subtitle: "Нешто мало више..."
+        },
+        {
+          id: "majstori",
+          title: "Мајстори",
+          subtitle: "Нешто на високом нивоу..."
+        }
+      ]
     };
+  },
+  methods: {
+    handleOpenCategory(category) {
+      this.$store.dispatch("setCategory", category);
+      router.push("/kategorija");
+    }
   },
   computed: {
     headerStyle() {
       return {
         backgroundImage: `url(${this.header})`
       };
-    }
+    },
+    ...mapGetters({
+      user: "user"
+    })
   }
 };
 </script>
@@ -115,6 +124,7 @@ export default {
   display: flex;
   justify-content: center !important;
 }
+
 .contact-form {
   margin-top: 30px;
 }

@@ -8,9 +8,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title" @click="$router.push('/glavna')">
-          Феникс Библиотека
-        </h3>
+        <!--        <h3 class="md-title">{{ pdf.name }}</h3>-->
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -29,18 +27,9 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <md-list-item href="/glavna" v-if="showDownload">
-                <i class="material-icons">home</i>
-                <p>Почетна</p>
-              </md-list-item>
-
-              <md-list-item
-                v-if="user.loggedIn"
-                @click.prevent="signOut"
-                href="/logout"
-              >
-                <i class="material-icons">power_settings_new</i>
-                <p>Одјава</p>
+              <md-list-item @click="nazad">
+                <i class="material-icons">arrow_back_ios</i>
+                <p>Повратак на списак</p>
               </md-list-item>
             </md-list>
           </div>
@@ -68,7 +57,6 @@ function resizeThrottler(actualResizeHandler) {
 }
 
 import MobileMenu from "@/layout/MobileMenu";
-import { getAuth } from "firebase/auth";
 import { mapGetters } from "vuex";
 
 export default {
@@ -103,20 +91,14 @@ export default {
     };
   },
   computed: {
-    showDownload() {
-      const excludedRoutes = ["login", "landing", "profile"];
-      return excludedRoutes.every(r => r !== this.$route.name);
-    },
     ...mapGetters({
-      user: "user"
+      user: "user",
+      pdf: "pdf"
     })
   },
   methods: {
-    signOut() {
-      const auth = getAuth();
-      auth.signOut().then(() => {
-        // router.push("/login");
-      });
+    nazad() {
+      router.back();
     },
     bodyClick() {
       let bodyClick = document.getElementById("bodyClick");

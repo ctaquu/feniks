@@ -4,35 +4,26 @@
       <div class="container">
         <div class="md-layout">
           <div
-            class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
+            class="md-layout-item md-size-75 md-small-size-70 md-xsmall-size-100"
           >
-            <h1 class="title">Ученици</h1>
-            <h4>
-              Неке поруке младим нараштајима...
-            </h4>
+            <h1 class="title">{{ pdf.name }}</h1>
             <br />
           </div>
         </div>
       </div>
     </parallax>
     <div class="main main-raised">
-      <div class="section">
-        <div class="container">
-          <div class="features text-center">
-            <pdf-list category="ucenici" />
-          </div>
-        </div>
-      </div>
+      <pdf-viewer />
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import PdfList from "../components/PdfList";
+import PdfViewer from "../components/PdfViewer";
 
 export default {
-  components: { PdfList },
+  components: { PdfViewer },
   bodyClass: "landing-page",
   props: {
     header: {
@@ -53,7 +44,11 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      name: null,
+      email: null,
+      message: null
+    };
   },
   computed: {
     headerStyle() {
@@ -62,11 +57,10 @@ export default {
       };
     },
     ...mapGetters({
-      user: "user"
+      pdf: "pdf"
     })
   },
-  created() {},
-  methods: {}
+  created() {}
 };
 </script>
 
@@ -75,7 +69,6 @@ export default {
   display: flex;
   justify-content: center !important;
 }
-
 .contact-form {
   margin-top: 30px;
 }

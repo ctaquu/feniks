@@ -1,17 +1,15 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Index from "./views/Index.vue";
-import Landing from "./views/Landing.vue";
 import Glavna from "./views/Glavna.vue";
-import Ucenici from "./views/categories/Ucenici.vue";
-import Pomocnici from "./views/categories/Pomocnici.vue";
-import Majstori from "./views/categories/Majstori.vue";
+import PDF from "./views/PDF.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
-import MainNavbar from "./layout/MainNavbar.vue";
 import Navbar from "./layout/Navbar.vue";
-import MainFooter from "./layout/MainFooter.vue";
+import NavbarPDF from "./layout/NavbarPDF.vue";
 import Footer from "./layout/Footer.vue";
+import Kategorija from "./views/Kategorija.vue";
+import Help from "./views/Help.vue";
+import PageNotFound from "./views/PageNotFound.vue";
 
 Vue.use(Router);
 
@@ -21,16 +19,7 @@ export default new Router({
     {
       path: "/",
       name: "index",
-      components: { default: Index, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
-    },
-    {
-      path: "/landing",
-      name: "landing",
-      components: { default: Landing, header: MainNavbar, footer: MainFooter },
+      components: { default: Glavna, header: Navbar, footer: Footer },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
@@ -38,7 +27,7 @@ export default new Router({
     },
     {
       path: "/glavna",
-      name: "glavna",
+      name: "main",
       components: { default: Glavna, header: Navbar, footer: Footer },
       props: {
         header: { colorOnScroll: 400 }
@@ -61,25 +50,41 @@ export default new Router({
       }
     },
     {
-      path: "/kategorije/ucenici",
-      name: "ucenici",
-      components: { default: Ucenici, header: Navbar, footer: Footer },
+      path: "/kategorija",
+      name: "category",
+      components: { default: Kategorija, header: Navbar, footer: Footer },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    // {
+    //   path: "/kategorije/:category",
+    //   name: "kategorije",
+    //   components: { default: Kategorija, header: Navbar, footer: Footer },
+    //   props: {
+    //     header: { colorOnScroll: 400 }
+    //   }
+    // },
+    {
+      path: "/pdf",
+      name: "pdf",
+      components: { default: PDF, header: NavbarPDF, footer: Footer },
       props: {
         header: { colorOnScroll: 400 }
       }
     },
     {
-      path: "/kategorije/pomocnici",
-      name: "pomocnici",
-      components: { default: Pomocnici, header: Navbar, footer: Footer },
+      path: "/pomoc",
+      name: "help",
+      components: { default: Help, header: Navbar, footer: Footer },
       props: {
         header: { colorOnScroll: 400 }
       }
     },
     {
-      path: "/kategorije/majstori",
-      name: "majstori",
-      components: { default: Majstori, header: Navbar, footer: Footer },
+      path: "*",
+      name: "404",
+      components: { default: PageNotFound, header: Navbar, footer: Footer },
       props: {
         header: { colorOnScroll: 400 }
       }

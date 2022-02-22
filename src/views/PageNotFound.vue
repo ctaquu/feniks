@@ -6,33 +6,20 @@
           <div
             class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
           >
-            <h1 class="title">Ученици</h1>
-            <h4>
-              Неке поруке младим нараштајима...
-            </h4>
+            <h1 class="title">Тражена страница не постоји!</h1>
             <br />
           </div>
         </div>
       </div>
     </parallax>
-    <div class="main main-raised">
-      <div class="section">
-        <div class="container">
-          <div class="features text-center">
-            <pdf-list category="ucenici" />
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import PdfList from "../components/PdfList";
+import router from "../router";
 
 export default {
-  components: { PdfList },
   bodyClass: "landing-page",
   props: {
     header: {
@@ -52,21 +39,13 @@ export default {
       default: require("@/assets/img/faces/kendall.jpg")
     }
   },
-  data() {
-    return {};
-  },
   computed: {
     headerStyle() {
       return {
         backgroundImage: `url(${this.header})`
       };
-    },
-    ...mapGetters({
-      user: "user"
-    })
-  },
-  created() {},
-  methods: {}
+    }
+  }
 };
 </script>
 

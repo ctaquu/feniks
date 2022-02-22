@@ -6,10 +6,8 @@
           <div
             class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
           >
-            <h1 class="title">Ученици</h1>
-            <h4>
-              Неке поруке младим нараштајима...
-            </h4>
+            <h1 class="title">{{ category.title }}</h1>
+            <h4>{{ category.subtitle }}</h4>
             <br />
           </div>
         </div>
@@ -19,7 +17,7 @@
       <div class="section">
         <div class="container">
           <div class="features text-center">
-            <pdf-list category="ucenici" />
+            <pdf-list />
           </div>
         </div>
       </div>
@@ -29,7 +27,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import PdfList from "../components/PdfList";
+import PdfList from "./components/PdfList";
 
 export default {
   components: { PdfList },
@@ -62,7 +60,7 @@ export default {
       };
     },
     ...mapGetters({
-      user: "user"
+      category: "category"
     })
   },
   created() {},

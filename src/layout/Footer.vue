@@ -13,15 +13,13 @@
             </a>
           </li>
           <li>
-            <a href="/glavna">
+            <a href="/pomoc">
               Помоћ
             </a>
           </li>
         </ul>
       </nav>
-      <div class="copyright">
-        &copy; {{ year }}, Поштована Ложа Феникс
-      </div>
+      <div class="copyright">&copy; {{ year }}, Поштована Ложа Феникс</div>
     </div>
   </footer>
 </template>
