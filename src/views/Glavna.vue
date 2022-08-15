@@ -6,9 +6,9 @@
           <div
             class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
           >
-            <h1 class="title">Наслов за Главну Страну</h1>
+            <h1 class="title">Библиотека Поштоване Ложе Феникс</h1>
             <h4>
-              Порука добродошлице.
+              Добродошли!.
             </h4>
             <br />
           </div>
@@ -37,7 +37,7 @@
               >
                 <div class="info">
                   <md-button
-                    class="md-success md-lg"
+                    class="md-lg md-primary"
                     @click="handleOpenCategory(category)"
                     >{{ category.title }}
                   </md-button>
@@ -61,7 +61,7 @@ export default {
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/bg3.jpg")
+      default: require("@/assets/img/feniks_logo.jpg")
     },
     teamImg1: {
       type: String,

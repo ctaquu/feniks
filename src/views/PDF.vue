@@ -28,7 +28,7 @@ export default {
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/bg3.jpg")
+      default: require("@/assets/img/feniks_logo.jpg")
     },
     teamImg1: {
       type: String,

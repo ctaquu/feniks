@@ -6,7 +6,7 @@
           <div
             class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto"
           >
-            <login-card header-color="green">
+            <login-card header-color="grey">
               <h4 slot="title" class="card-title">Пријављивање</h4>
               <p slot="description" class="description" style="color: red">
                 {{ errorMessage }}
@@ -31,7 +31,7 @@
               </md-field>
               <md-button
                 slot="footer"
-                class="md-info md-lg"
+                class="md-primary md-lg"
                 @click="login"
                 :disabled="isWorking"
               >
