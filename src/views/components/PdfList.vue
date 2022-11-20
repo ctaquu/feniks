@@ -12,10 +12,6 @@
             <md-icon>picture_as_pdf</md-icon>
           </div>
           <h4 class="info-title">{{ pdf.name }}</h4>
-          <p>
-            Евентуално можемо да додамо и опис овде, али то мало компликује
-            ствари... :)
-          </p>
         </div>
       </div>
     </div>
@@ -63,13 +59,9 @@ export default {
         .then(res => {
           this.theList = res.items.map(i => {
             try {
-              const withoutExtension = i.name.replace(/\.[^/.]+$/, "");
-              const withoutPrefixOrderNumber = withoutExtension.split("#")[1];
               return {
                 id: `${this.category.id}/${i.name}`,
-                name: withoutPrefixOrderNumber
-                // name: i.name.replace(/\.[^/.]+$/, ""),
-                // properName: pdf.id.split("#")[1],
+                name: i.name.replace(/\.[^/.]+$/, "")
               };
             } catch (e) {
               // return nothing
@@ -91,26 +83,6 @@ export default {
     pdfList() {
       return this.theList;
     },
-    // pdfListWithProperNames() {
-    //   return this.pdfList.map(pdf => {
-    //     return {
-    //       ...pdf,
-    //       properName: pdf.id.split("#")[1]
-    //     };
-    //   });
-    // },
-    // sortedPdfList() {
-    // return this.pdfList;
-    // const theLL = this.theList.map(pdf => {
-    //   const parts = pdf.id.split("#");
-    //   pdf.order = parseInt(parts[0]);
-    //   return pdf;
-    // });
-    // theLL.sort((a, b) =>
-    //   a.order > b.order ? 1 : b.order > a.order ? -1 : 0
-    // );
-    // return theLL;
-    // },
     headerStyle() {
       return {
         backgroundImage: `url(${this.header})`

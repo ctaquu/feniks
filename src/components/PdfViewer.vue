@@ -1,18 +1,19 @@
 <template>
-  <div v-if="src">
+  <div>
     <pdf
+      v-if="!pdfLoading"
       v-for="i in numPages"
       :key="i"
       :src="src"
       :page="i"
       style="display: inline-block; width: 100%"
     ></pdf>
+    <div v-else>loading...</div>
   </div>
 </template>
 
 <script>
 import pdf from "vue-pdf";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { mapGetters } from "vuex";
 
 export default {
@@ -23,54 +24,35 @@ export default {
     return {
       src: null,
       numPages: undefined,
-      url: null
+      url: null,
+      pdfLoading: true,
     };
   },
   methods: {
-    fetchPdfUrl() {
-      // Create a reference to the file we want to download
-      const storage = getStorage();
-      const starsRef = ref(storage, `dokumenta/${this.pdf.id}`);
-
-      // Get the download URL
-      getDownloadURL(starsRef)
-        .then(url => {
-          this.url = url;
-          this.src = pdf.createLoadingTask(this.url);
-          this.src.promise.then(pdf => {
-            this.numPages = pdf.numPages;
-          });
-        })
-        .catch(error => {
-          // A full list of error codes is available at
-          // https://firebase.google.com/docs/storage/web/handle-errors
-          switch (error.code) {
-            case "storage/object-not-found":
-              // File doesn't exist
-              break;
-            case "storage/unauthorized":
-              // User doesn't have permission to access the object
-              break;
-            case "storage/canceled":
-              // User canceled the upload
-              break;
-
-            // ...
-
-            case "storage/unknown":
-              // Unknown error occurred, inspect the server response
-              break;
-          }
+    fetchPdfData() {
+      this.url = this.pdf.URL;
+      this.src = pdf.createLoadingTask(this.url);
+      try {
+        this.src.promise.then(pdf => {
+          this.numPages = pdf.numPages;
+          this.pdfLoading = false;
         });
-    }
+      } catch (e) {
+        console.warn("EEE", e);
+      }
+    },
   },
   computed: {
     ...mapGetters({
-      pdf: "pdf"
+      pdf: "file"
     })
   },
   mounted() {
-    this.fetchPdfUrl();
+    try {
+      this.fetchPdfData();
+    } catch (e) {
+      console.info("fetchPdfData failed");
+    }
   }
 };
 </script>

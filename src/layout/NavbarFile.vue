@@ -10,7 +10,7 @@
       <div class="md-toolbar-section-start">
         <h3 class="md-title" @click="nazad">
           <i class="material-icons">arrow_back_ios</i>
-          Повратак на списак
+          Назад
         </h3>
       </div>
       <div class="md-toolbar-section-end">

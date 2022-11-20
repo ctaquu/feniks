@@ -6,7 +6,7 @@
           <div
             class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
           >
-            <h1 class="title">{{ category.title }}</h1>
+            <h1 class="title">{{ category.name }}</h1>
             <h4>{{ category.subtitle }}</h4>
             <br />
           </div>
@@ -17,7 +17,41 @@
       <div class="section">
         <div class="container">
           <div class="features text-center">
-            <pdf-list />
+            <div class="features text-center">
+              <div v-if="categories" class="md-layout">
+                <div
+                  v-for="folder in categories.folders"
+                  :key="folder.id"
+                  class="md-layout-item md-medium-size-33 md-small-size-100"
+                >
+                  <div class="info info-folder">
+                    <md-button
+                      style="white-space: pre-wrap"
+                      class="md-lg md-primary"
+                      @click="handleOpenFolder(folder)"
+                      >{{ folder.title }}
+                    </md-button>
+                    <p>{{ folder.subtitle }}</p>
+                  </div>
+                </div>
+                <div
+                  v-if="categories"
+                  v-for="file in categories.files"
+                  :key="file.id"
+                  class="md-layout-item md-medium-size-33 md-small-size-100"
+                >
+                  <div class="info info-file">
+                    <md-button
+                      style="white-space: pre-wrap"
+                      class="md-lg md-danger"
+                      @click="handleOpenFile(file)"
+                      >{{ file.title }}
+                    </md-button>
+                    <p>{{ file.subtitle }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -27,10 +61,9 @@
 
 <script>
 import { mapGetters } from "vuex";
-import PdfList from "./components/PdfList";
+import router from "@/router";
 
 export default {
-  components: { PdfList },
   bodyClass: "landing-page",
   props: {
     header: {
@@ -60,11 +93,34 @@ export default {
       };
     },
     ...mapGetters({
-      category: "category"
+      category: "category",
+      categories: "dataStructure"
     })
   },
-  created() {},
-  methods: {}
+  created() {
+    // debugger
+    this.$store.dispatch("loadDataStructure", this.category.fullPath);
+  },
+  // mounted() {
+  //   debugger
+  // },
+  beforeRouteUpdate(to, from, next) {
+    // debugger
+    this.$store.dispatch("loadDataStructure", `/dokumenta/${to.params.paths}`);
+    next();
+  },
+  methods: {
+    handleOpenFolder(category) {
+      this.$store.dispatch("setCategory", category);
+      this.$store.dispatch("loadDataStructure", category.fullPath);
+      // router.push(category.fullPath)
+      router.push(`${router.currentRoute.fullPath}/${category.id}`);
+    },
+    handleOpenFile(file) {
+      this.$store.dispatch("setFile", file);
+      router.push("/file");
+    }
+  }
 };
 </script>
 

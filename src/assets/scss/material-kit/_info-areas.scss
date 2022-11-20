@@ -4,7 +4,7 @@
     padding: 70px 0 30px;
 
     .icon{
-        color: $gray-color;
+        //color: $gray-color;
 
         > i{
             font-size: 3.85rem !important;
@@ -21,6 +21,18 @@
     p{
         color: $gray-color;
     }
+}
+
+.info-folder {
+  .icon{
+    color: $amber-800;
+  }
+}
+
+.info-file {
+  .icon{
+    color: $gray-color;
+  }
 }
 
 .info-horizontal{

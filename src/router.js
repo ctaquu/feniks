@@ -1,13 +1,14 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Glavna from "./views/Glavna.vue";
-import PDF from "./views/PDF.vue";
+import File from "./views/File.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import Navbar from "./layout/Navbar.vue";
-import NavbarPDF from "./layout/NavbarPDF.vue";
+import NavbarFile from "./layout/NavbarFile.vue";
 import Footer from "./layout/Footer.vue";
 import Kategorija from "./views/Kategorija.vue";
+import Muzika from "./views/Muzika.vue";
 import Help from "./views/Help.vue";
 import PageNotFound from "./views/PageNotFound.vue";
 
@@ -50,25 +51,25 @@ export default new Router({
       }
     },
     {
-      path: "/kategorija",
+      path: "/kategorija/:paths+",
       name: "category",
-      components: { default: Kategorija, header: Navbar, footer: Footer },
+      components: { default: Kategorija, header: NavbarFile, footer: Footer },
       props: {
         header: { colorOnScroll: 400 }
       }
     },
-    // {
-    //   path: "/kategorije/:category",
-    //   name: "kategorije",
-    //   components: { default: Kategorija, header: Navbar, footer: Footer },
-    //   props: {
-    //     header: { colorOnScroll: 400 }
-    //   }
-    // },
     {
-      path: "/pdf",
-      name: "pdf",
-      components: { default: PDF, header: NavbarPDF, footer: Footer },
+      path: "/muzika",
+      name: "muzika",
+      components: { default: Muzika, header: Navbar, footer: Footer },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/file",
+      name: "Фајл",
+      components: { default: File, header: NavbarFile, footer: Footer },
       props: {
         header: { colorOnScroll: 400 }
       }

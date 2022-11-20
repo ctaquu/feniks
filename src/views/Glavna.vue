@@ -29,19 +29,39 @@
             </div>
           </div>
           <div class="features text-center">
-            <div class="md-layout">
+            <div
+              v-if="categories"
+              class="md-layout"
+            >
               <div
-                v-for="category in categories"
-                :key="category.id"
+                v-for="folder in categories.folders"
+                :key="folder.id"
                 class="md-layout-item md-medium-size-33 md-small-size-100"
               >
-                <div class="info">
+                <div class="info info-folder">
                   <md-button
+                    style="white-space: pre-wrap"
                     class="md-lg md-primary"
-                    @click="handleOpenCategory(category)"
-                    >{{ category.title }}
+                    @click="handleOpenFolder(folder)"
+                    >{{ folder.title }}
                   </md-button>
-                  <p>{{ category.subtitle }}</p>
+                  <p>{{ folder.subtitle }}</p>
+                </div>
+              </div>
+              <div
+                v-if="categories"
+                v-for="file in categories.files"
+                :key="file.id"
+                class="md-layout-item md-medium-size-33 md-small-size-100"
+              >
+                <div class="info info-file">
+                  <md-button
+                    style="white-space: pre-wrap"
+                    class="md-lg md-danger"
+                    @click="handleOpenFile(file)"
+                  >{{ file.title }}
+                  </md-button>
+                  <p>{{ file.subtitle }}</p>
                 </div>
               </div>
             </div>
@@ -80,30 +100,20 @@ export default {
     return {
       name: null,
       email: null,
-      message: null,
-      categories: [
-        {
-          id: "ucenici",
-          title: "Ученици",
-          subtitle: "Почетни текстови у трагању за светлошћу..."
-        },
-        {
-          id: "pomocnici",
-          title: "Помоћници",
-          subtitle: "Нешто мало више..."
-        },
-        {
-          id: "majstori",
-          title: "Мајстори",
-          subtitle: "Нешто на високом нивоу..."
-        }
-      ]
+      message: null
     };
   },
+  created() {
+    this.$store.dispatch("loadDataStructure");
+  },
   methods: {
-    handleOpenCategory(category) {
+    handleOpenFolder(category) {
       this.$store.dispatch("setCategory", category);
-      router.push("/kategorija");
+      router.push(`/kategorija/${category.id}`);
+    },
+    handleOpenFile(file) {
+      this.$store.dispatch("setFile", file);
+      router.push("/file");
     }
   },
   computed: {
@@ -113,7 +123,8 @@ export default {
       };
     },
     ...mapGetters({
-      user: "user"
+      user: "user",
+      categories: "dataStructure"
     })
   }
 };

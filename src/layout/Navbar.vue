@@ -29,6 +29,11 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
+              <md-list-item href="/muzika" v-if="user.loggedIn">
+                <i class="material-icons">music_note</i>
+                <p>Музика</p>
+              </md-list-item>
+
               <md-list-item href="/glavna" v-if="showDownload">
                 <i class="material-icons">home</i>
                 <p>Почетна</p>

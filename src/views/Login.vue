@@ -66,8 +66,8 @@ export default {
   },
   props: {
     header: {
-      type: String
-      // default: require("@/assets/img/profile_city.jpg")
+      type: String,
+      default: require("@/assets/img/feniks-bg.png"),
     }
   },
   computed: {
